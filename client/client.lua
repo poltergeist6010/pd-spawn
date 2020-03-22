@@ -1,4 +1,3 @@
-local isOpen = false
 local new = false
 local k = 270.0
 local cam
