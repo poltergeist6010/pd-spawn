@@ -2,6 +2,7 @@ local new = false
 local k = 270.0
 local cam
 
+RegisterNetEvent("pd-spawn")
 AddEventHandler("pd-spawn", function()
     pos = GetEntityCoords(PlayerPedId())
     cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", pos.x, pos.y, pos.z + 200.0, 270.00, 0.00, 0.00, 80.00, 0, 0)
