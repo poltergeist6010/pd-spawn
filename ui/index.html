@@ -8,30 +8,37 @@
         #index {
             display: none;
             position: absolute;
-            margin-left: -20px;
+            /* margin-left: -20px; */
         }
 
         .spawn, .spawnNow {
-            padding: 3.5% 7.5%;
-            width: 25vh;
-            margin-top: 5%;
+            padding: 8px 25px;
+            width: 200px;
+            margin-top: 10px;
             list-style: none;
             border-radius: 3px;
 
-            background: rgba(0, 0, 0, .85);
+            background: rgba(0, 0, 0, .65);
             color: white;
             
             text-align: center;
             font-family: 'Roboto', sans-serif;
             
             user-select: none;
+
+            transition: width 0.5s;
         }
+
+        #index li:hover {
+            width: 210px;
+        }
+
     </style>
 </head>
 <body>
     <div id="index">
         <ul>
-            <li class="spawnNow" style="background: rgba(0, 50, 0, .85)" data-spawn="spawn">Spawn Now</li>
+            <li class="spawnNow" style="background: rgba(0, 50, 0, 0.65)" data-spawn="spawn">Spawn Now</li>
             <br>
             <li class="spawn" data-spawn="altee">Altee St. Train Station</li>
             <li class="spawn" data-spawn="vinewood">Vinewood Blvd. Taxi Stand</li>
@@ -43,9 +50,7 @@
             <li class="spawn" data-spawn="paletobus">Paleto Bus Stop</li>
         </ul>
     </div>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
         $(() => {
             window.addEventListener('message', (event) => {
@@ -65,32 +70,9 @@
             });
 
             $('.spawn').on('mousedown', function(){
-                $(this).css('background', 'rgba(0, 50, 0, .85');
+                $(this).css('background', 'rgba(0, 50, 0, .65');
             }).on('mouseup mouseLeave', function(){
-                $(this).css('background', 'rgba(0, 0, 0, .85');
-            });
-
-            $('.spawn').hover(function(){
-                $(this).css({
-                    'width': '27vh',
-                });
-            }, function(){
-                $(this).css({
-                    'background': 'rgba(0, 0, 0, .85)',
-                    'width': '25vh'
-                });
-            });
-
-            $('.spawnNow').hover(function(){
-                $(this).css({
-                    'background': 'rgba(20, 100, 20, .85)',
-                    'width': '27vh'
-                });
-            }, function(){
-                $(this).css({
-                    'background': 'rgba(0, 50, 0, .85)',
-                    'width': '25vh'
-                });
+                $(this).css('background', 'rgba(0, 0, 0, .65');
             });
         })
     </script>
